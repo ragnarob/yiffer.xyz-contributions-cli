@@ -13,6 +13,7 @@ const browserConfig = {
   module: {
     rules: [
       { test: /\.(js)$/, use: "babel-loader" },
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, use: 'url-loader' },
       { test: /\.css$/, use: ["css-loader"] },
     ],
   },
@@ -35,6 +36,7 @@ const serverConfig = {
   module: {
     rules: [
       { test: /\.(js)$/, use: "babel-loader" },
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, use: 'url-loader' },
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],

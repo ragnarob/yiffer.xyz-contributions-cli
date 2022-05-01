@@ -13,14 +13,14 @@ export default function Home({ data }) {
   return (
     <div style={{ display: 'flex', gap: '0.25rem', flexWrap: 'wrap' }}>
       {comicsObj.comics.map(comic => (
-        <>
+        <React.Fragment key={comic.id}>
           <div style={{ border: '1px solid #ccc' }}>
             <NavLink to={`/comic/${comic.name}`}>
               {comic.name}
             </NavLink>
             <p>{comic.artist}</p>
           </div>
-        </>
+        </React.Fragment>
       ))}
     </div>
   );
