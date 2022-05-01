@@ -1,4 +1,3 @@
-import crypto from 'crypto'
 import fs from 'fs'
 import jwt from 'jsonwebtoken'
 import yaml from 'js-yaml'
@@ -6,9 +5,10 @@ import yaml from 'js-yaml'
 let fileContents = fs.readFileSync('config/cfg.yml', 'utf8');
 const config = yaml.load(fileContents);
 const tokenConfig = config.tokenConfig;
+import { createPublicKey } from 'crypto';
 
 let rawPublicKey = fs.readFileSync(`${config.publicJwtKeyPath}`, 'utf-8')
-let publicKey = crypto.createPublicKey(rawPublicKey)
+let publicKey = createPublicKey(rawPublicKey);
 let tokenPublicKey = publicKey
 
 export async function getCookieToken(req) {
