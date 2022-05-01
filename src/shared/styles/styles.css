@@ -1,0 +1,15 @@
+@import './fonts.css';
+
+p {
+  font-size: 1rem;
+  font-family: 'Mulish';
+}
+
+a {
+  font-family: 'Mulish';
+  font-weight: 600;
+}
+
+h1 {
+  font-family: 'Shrikhand';
+}

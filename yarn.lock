@@ -962,6 +962,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/mulish/-/mulish-4.5.7.tgz#6cd2c42324d4e9ce04248beffcabd9c61524ccb2"
   integrity sha512-RlhbCfHXZ3XtUliaztzWbPRFnxlgFtA7UasM0YNQr83qKof1+zZEmAdfMX6w5MkuyX7cAbNXHDjwwQBMZIEFKw==
 
+"@fontsource/shrikhand@^4.5.5":
+  version "4.5.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/shrikhand/-/shrikhand-4.5.5.tgz#81803849ad256e13397993e6c95f819bfd8c278f"
+  integrity sha512-nRmhc34tD+qV4QW+s6BcmvFUu9yg5NrcdbjlNKL0h0WfJwqAOPcB9V3+0M3lVJ8JdfOv+AXIvFE6kD4FqpWdQg==
+
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.1.1.tgz#e5d2e450306a9491e3bd77e323e38d7aff315996"

@@ -17,18 +17,3 @@ ReactDOM.hydrate(
   </BrowserRouter>,
   document.getElementById("app")
 );
-
-res.send(`
- <!DOCTYPE html>
- <html>
-   <head>
-    <title>SSR with React Router</title>
-    <script src="/bundle.js" defer></script>
-    <link href="/main.css" rel="stylesheet">
-   </head>
-
-   <body>
-      <div id="app">${markup}</div>
-   </body>
- </html>
-`);

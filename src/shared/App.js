@@ -1,8 +1,7 @@
 import * as React from "react";
 import { NavLink, Route, Routes } from 'react-router-dom';
 import routes from './routes';
-import "./styles.css";
-// import '@fontsource/mulish';
+import "./styles/styles.css";
 
 export default function App({ data }) {
   return (
