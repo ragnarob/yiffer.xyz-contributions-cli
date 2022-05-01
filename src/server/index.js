@@ -7,27 +7,64 @@ import serialize from "serialize-javascript"
 import { matchPath } from 'react-router-dom'
 import routes from '../shared/routes';
 import { StaticRouter } from "react-router-dom/server";
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import rootReducer from '../shared/store';
+import cookieParser from 'cookie-parser'
+import { getCookieToken } from './cookies';
+import fs from 'fs'
+import yaml from 'js-yaml'
+
+let fileContents = fs.readFileSync('config/cfg.yml', 'utf8');
+const config = yaml.load(fileContents);
 
 const app = express();
 
 app.use(cors());
+app.use(cookieParser())
 app.use(express.static("dist"));
+
+app.use(async (req, res, next) => {
+  let userData = await getCookieToken(req);
+  req.userData = userData;
+
+  if (req.cookies && req.cookies[config.themeCookieName]) {
+    req.theme = req.cookies[config.themeCookieName];
+  }
+  else {
+    req.theme = 'light';
+  }
+
+  next()
+})
 
 app.get("*", async (req, res, next) => {
   const activeRoute = routes.find(route => matchPath(route.path, req.url));
-  let data = null;
 
+  let data = null;
   if (activeRoute?.fetchInitialData) {
     data = await activeRoute.fetchInitialData(req.path);
   }
 
+  const store = createStore(rootReducer)
+  store.dispatch({ type: 'theme/setTheme', payload: req.theme })
+  store.dispatch({ type: 'auth/setUser', payload: req.userData })
+
   const markup = ReactDOM.renderToString(
     <StaticRouter location={req.url}>
-      <App data={data} />
+      <Provider store={store}>
+        <App data={data} />
+      </Provider>
     </StaticRouter>
   );
 
-  res.send(`
+  const preloadedState = store.getState()
+
+  res.send(renderFullPage(markup, data, preloadedState))
+});
+
+function renderFullPage(markup, data, preloadedState) {
+  return `
     <!DOCTYPE html>
     <html>
       <head>
@@ -36,7 +73,11 @@ app.get("*", async (req, res, next) => {
         <link href="/main.css" rel="stylesheet" />
 
         <script>
-          window.__INITIAL_DATA__ = ${serialize(data)}
+          window.__INITIAL_DATA__ = ${serialize(data)};
+          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
+    /</g,
+    '\\u003c'
+  )};
         </script>
       </head>
 
@@ -44,8 +85,8 @@ app.get("*", async (req, res, next) => {
         <div id="app">${markup}</div>
       </body>
     </html>
-  `);
-});
+    `
+}
 
 const PORT = process.env.PORT || 3000;
 
