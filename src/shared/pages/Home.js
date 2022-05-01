@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { getSomeData } from './api';
-import useSsrData from './useSsrData';
+import { getSomeData } from '../api';
+import useSsrData from '../useSsrData';
 
 export default function Home({ data }) {
   const { data: comicsObj, isLoading } = useSsrData(data, getSomeData);

@@ -1,6 +1,6 @@
 import { getComic, getSomeData } from './api';
-import Comic from './Comic';
-import Home from './Home';
+import Comic from './pages/Comic';
+import Home from './pages/Home';
 
 const routes = [
   {
