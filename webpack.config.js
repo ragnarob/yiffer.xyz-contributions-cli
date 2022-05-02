@@ -4,7 +4,7 @@ const nodeExternals = require("webpack-node-externals");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const browserConfig = {
-  mode: "production",
+  mode: "development", //TODO: remove for prod
   entry: "./src/browser/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -22,6 +22,10 @@ const browserConfig = {
       __isBrowser__: "true",
     }),
   ],
+  //TODO: remove for prod
+  optimization: {
+    minimize: false
+  },
 };
 
 const serverConfig = {

@@ -1,0 +1,22 @@
+.text-button {
+  color: var(--link);
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: 600;
+  padding-bottom: 1px;
+  width: fit-content;
+  height: fit-content;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size .2s;
+}
+
+.text-button:hover, .text-button:focus {
+  background-size: 100% 1px;
+  cursor: pointer;
+}

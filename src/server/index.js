@@ -53,17 +53,17 @@ app.get("*", async (req, res, next) => {
   const markup = ReactDOM.renderToString(
     <StaticRouter location={req.url}>
       <Provider store={store}>
-        <App data={data} />
+        <App data={data} theme={req.theme} />
       </Provider>
     </StaticRouter>
   );
 
   const preloadedState = store.getState()
 
-  res.send(renderFullPage(markup, data, preloadedState))
+  res.send(renderFullPage(markup, data, preloadedState, req.theme))
 });
 
-function renderFullPage(markup, data, preloadedState) {
+function renderFullPage(markup, data, preloadedState, theme) {
   return `
     <!DOCTYPE html>
     <html>
@@ -74,6 +74,7 @@ function renderFullPage(markup, data, preloadedState) {
 
         <script>
           window.__INITIAL_DATA__ = ${serialize(data)};
+          window.__THEME__ = '${theme}';
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
     /</g,
     '\\u003c'

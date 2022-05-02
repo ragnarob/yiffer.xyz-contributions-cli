@@ -1,14 +1,18 @@
-import * as React from "react";
-import { NavLink, Route, Routes } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useSelector } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
+import AuthModal from './components/auth/AuthModal';
+import NavBar from './components/NavBar/NavBar';
 import routes from './routes';
-import "./styles/styles.css";
+import "./styles/general.css";
 
-export default function App({ data }) {
+export default function App({ data, theme }) {
+  const storeTheme = useSelector(state => state.theme);
+
   return (
-    <>
-      <div>
-        <p>Top bar</p>
-      </div>
+    <div data-theme={storeTheme.theme} id="rootdiv">
+      <NavBar />
+      <AuthModal />
 
       <Routes>
         {routes.map(route => {
@@ -27,6 +31,6 @@ export default function App({ data }) {
 
         <Route path="/*" element={<p>NO MATCH</p>} />
       </Routes>
-    </>
+    </div>
   );
 }

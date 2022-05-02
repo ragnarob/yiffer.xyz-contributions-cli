@@ -1,0 +1,72 @@
+@import './reset.css';
+@import './fonts.css';
+@import './colors.css';
+
+#rootdiv {
+  min-width: 100vw;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+}
+
+p, a, label, li, td {
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  padding-top: 2rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+p {
+  font-size: 1rem;
+  font-family: 'Mulish';
+}
+
+a {
+  font-family: 'Mulish';
+  font-weight: 600;
+}
+
+h1, .shrikhand {
+  font-family: 'Shrikhand';
+  font-weight: 400 !important;
+}
+
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 550px) {
+  .desktop {
+    display: none;
+  }
+}
+@media only screen and (min-width: 551px) {
+  .mobile {
+    display: none;
+  }
+}
