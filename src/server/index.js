@@ -69,6 +69,7 @@ function renderFullPage(markup, data, preloadedState, theme) {
     <html>
       <head>
         <title>SSR with React Router</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="/bundle.js" defer></script>
         <link href="/main.css" rel="stylesheet" />
 

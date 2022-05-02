@@ -10,11 +10,24 @@
   background-color: var(--background);
 }
 
+p, label, li, td, h1, h2, h3, h4, h5 {
+  color: var(--text);
+}
+
+p, label, li, td, h1, h2, h3, h4, h5, button, a {
+  font-family: 'Mulish';
+}
+
+a {
+  color: var(--link);
+}
+
 p, a, label, li, td {
   font-size: 1rem;
 }
 
 h1 {
+  font-family: 'Mulish';
   font-size: 3rem;
   font-weight: 300;
   padding-top: 2rem;
@@ -43,15 +56,13 @@ h4 {
 
 p {
   font-size: 1rem;
-  font-family: 'Mulish';
 }
 
 a {
-  font-family: 'Mulish';
   font-weight: 600;
 }
 
-h1, .shrikhand {
+.shrikhand {
   font-family: 'Shrikhand';
   font-weight: 400 !important;
 }
