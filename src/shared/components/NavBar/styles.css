@@ -3,21 +3,23 @@ nav {
   width: 100%;
   box-shadow: 0 0px 5px #0000001a;
 }
+
 [data-theme='dark'] nav {
   background: transparent;
 }
+
 nav span {
   margin-bottom: 1px;
 }
 
-nav a, nav button {
+.nav-link {
   color: var(--link);
   font-size: 0.95rem;
 }
-[data-theme='light'] nav a, [data-theme='light'] nav button {
+[data-theme='light'] .nav-link {
   color: var(--dark1);
 }
-nav a:hover, nav a:focus, nav button:hover, nav button:focus {
+.nav-link:hover, .nav-link:focus {
   background-size: 0% 1px !important;
   text-decoration: none;
 }

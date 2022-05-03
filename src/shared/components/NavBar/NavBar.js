@@ -59,10 +59,10 @@ export default function NavBar({ }) {
         </div>
 
         <div className='nav-right'>
-          <TextButton onClick={() => setTheme('light')}>
+          <TextButton onClick={() => setTheme('light')} className='nav-link'>
             Light
           </TextButton>
-          <TextButton onClick={() => setTheme('dark')}>
+          <TextButton onClick={() => setTheme('dark')} className='nav-link'>
             Dark
           </TextButton>
         </div>

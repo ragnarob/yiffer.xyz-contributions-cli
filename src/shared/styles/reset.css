@@ -46,3 +46,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+div, span, button {
+  box-sizing: border-box;
+}

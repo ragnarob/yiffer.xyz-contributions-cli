@@ -1,6 +1,7 @@
 import { getComic, getSomeData } from './api';
-import Comic from './pages/Comic';
-import Home from './pages/Home';
+// import Comic from './pages/DemoWithDataFetech';
+import Home from './pages/Home/Home';
+import Upload from './pages/Upload/Upload';
 
 const routes = [
   {
@@ -9,12 +10,12 @@ const routes = [
     fetchInitialData: () => getSomeData(),
   },
   {
-    path: '/comic/:comicName',
-    component: Comic,
-    fetchInitialData: function (path) {
-      const comicName = path.split('/').pop();
-      return getComic(comicName);
-    },
+    path: '/upload',
+    component: Upload,
+    // fetchInitialData: function (path) {
+    //   const comicName = path.split('/').pop();
+    //   return getComic(comicName);
+    // },
   }
 ]
 
