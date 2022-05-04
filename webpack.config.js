@@ -43,7 +43,12 @@ const serverConfig = {
       { test: /\.(png|woff|woff2|eot|ttf|svg)$/, use: 'url-loader' },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: [
+          MiniCssExtractPlugin.loader, "css-loader",
+          {
+            loader: 'scoped-css-loader',
+          },
+        ],
       },
     ],
   },
