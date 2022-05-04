@@ -12,9 +12,22 @@ const browserConfig = {
   },
   module: {
     rules: [
-      { test: /\.(js)$/, use: "babel-loader" },
-      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, use: 'url-loader' },
-      { test: /\.css$/, use: ["css-loader"] },
+      {
+        test: /\.(js)$/,
+        use: "babel-loader"
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        use: 'url-loader'
+      },
+      {
+        test: /\.(sc|sa|c)ss$/,
+        use: [
+          "css-loader",
+          "scoped-css-loader",
+          "sass-loader",
+        ]
+      },
     ],
   },
   plugins: [
@@ -39,15 +52,21 @@ const serverConfig = {
   },
   module: {
     rules: [
-      { test: /\.(js)$/, use: "babel-loader" },
-      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, use: 'url-loader' },
       {
-        test: /\.css$/,
+        test: /\.(js)$/,
+        use: "babel-loader"
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        use: 'url-loader'
+      },
+      {
+        test: /\.(sc|sa|c)ss$/,
         use: [
-          MiniCssExtractPlugin.loader, "css-loader",
-          {
-            loader: 'scoped-css-loader',
-          },
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "scoped-css-loader",
+          "sass-loader",
         ],
       },
     ],
