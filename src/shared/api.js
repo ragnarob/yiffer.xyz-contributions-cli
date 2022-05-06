@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch';
 
 export async function getSomeData() {
   const url = 'https://yiffer.xyz/api/comicsPaginated';
@@ -6,8 +6,7 @@ export async function getSomeData() {
     const res = await fetch(url);
     const data = await res.json();
     return data;
-  }
-  catch (err) {
+  } catch (err) {
     console.log(err);
     return null;
   }

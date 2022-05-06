@@ -1,13 +1,20 @@
 import React from 'react';
 
-export default function Box({ margin, padding, elevation, hoverShadow, className, children, ...props }) {
+export default function Box({
+  margin,
+  padding,
+  elevation,
+  hoverShadow,
+  className,
+  children,
+  ...props
+}) {
   let elevationClasses = '';
 
   if (elevation === 1) {
     if (hoverShadow) {
       elevationClasses += ' simple-shadow-small ';
-    }
-    else {
+    } else {
       elevationClasses += ' simple-shadow-small-no-hover ';
     }
   }
@@ -15,8 +22,7 @@ export default function Box({ margin, padding, elevation, hoverShadow, className
   if (elevation === 2) {
     if (hoverShadow) {
       elevationClasses += ' simple-shadow ';
-    }
-    else {
+    } else {
       elevationClasses += ' simple-shadow-no-hover ';
     }
   }
@@ -33,5 +39,5 @@ export default function Box({ margin, padding, elevation, hoverShadow, className
     <div style={styles} className={`${elevationClasses} ${className}`} {...props}>
       {children}
     </div>
-  )
+  );
 }

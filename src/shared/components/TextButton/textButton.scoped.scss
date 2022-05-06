@@ -13,9 +13,10 @@
   background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: 0% 1px;
-  transition: background-size .2s;
+  transition: background-size 0.2s;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-size: 100% 1px;
     cursor: pointer;
   }

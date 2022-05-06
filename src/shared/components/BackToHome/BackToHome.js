@@ -14,5 +14,5 @@ export default function BackToHome({ ...props }) {
     >
       HOME ICON to front page
     </a>
-  )
+  );
 }

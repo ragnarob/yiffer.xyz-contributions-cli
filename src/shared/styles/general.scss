@@ -11,11 +11,29 @@
   background-color: var(--background);
 }
 
-p, label, li, td, h1, h2, h3, h4, h5 {
+p,
+label,
+li,
+td,
+h1,
+h2,
+h3,
+h4,
+h5 {
   color: var(--text);
 }
 
-p, label, li, td, h1, h2, h3, h4, h5, button, a {
+p,
+label,
+li,
+td,
+h1,
+h2,
+h3,
+h4,
+h5,
+button,
+a {
   font-family: 'Mulish';
 }
 
@@ -23,7 +41,11 @@ a {
   color: var(--link);
 }
 
-p, a, label, li, td {
+p,
+a,
+label,
+li,
+td {
   font-size: 1rem;
 }
 

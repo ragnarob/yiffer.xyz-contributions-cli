@@ -1,6 +1,6 @@
 const initialState = {
   theme: '',
-}
+};
 
 export default function themeReducer(state = initialState, action) {
   switch (action.type) {
@@ -8,8 +8,8 @@ export default function themeReducer(state = initialState, action) {
       return {
         ...state,
         theme: action.payload,
-      }
+      };
     default:
-      return state
+      return state;
   }
 }

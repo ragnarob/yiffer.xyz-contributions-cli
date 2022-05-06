@@ -12,7 +12,8 @@ nav {
   color: var(--link);
   font-size: 0.95rem;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-size: 0% 1px !important;
     text-decoration: none;
   }
@@ -30,7 +31,8 @@ nav {
   }
 }
 
-.nav-left, .nav-right {
+.nav-left,
+.nav-right {
   display: flex;
   gap: 1rem;
   padding: 0.5rem 4rem;
@@ -52,7 +54,8 @@ nav {
 }
 
 [data-theme='light'] {
-  .nav-link, .small-yiffer-title {
+  .nav-link,
+  .small-yiffer-title {
     color: var(--dark1);
   }
 }

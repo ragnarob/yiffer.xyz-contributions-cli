@@ -11,7 +11,7 @@ export default function Comic({ data }) {
   const theme = useSelector(state => state.theme);
 
   if (isLoading) {
-    return <p>Loading comic</p>
+    return <p>Loading comic</p>;
   }
 
   return (
@@ -19,7 +19,7 @@ export default function Comic({ data }) {
       <h1>{comic.name}</h1>
       <p>by {comic.artist}</p>
       <p>There are probable some pages. Probably {comic.numberOfPages}.</p>
-      <NavLink to='/'>HOME</NavLink>
+      <NavLink to="/">HOME</NavLink>
     </div>
   );
 }

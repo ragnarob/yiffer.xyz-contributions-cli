@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import AuthModal from './components/auth/AuthModal';
 import NavBar from './components/NavBar/NavBar';
 import routes from './routes';
-import "./styles/general.scss";
+import './styles/general.scss';
 
 export default function App({ data, theme }) {
   const storeTheme = useSelector(state => state.theme);
@@ -22,11 +22,9 @@ export default function App({ data, theme }) {
             <Route
               key={path}
               path={path}
-              element={
-                <C data={data} fetchInitialData={fetchInitialData} />
-              }
+              element={<C data={data} fetchInitialData={fetchInitialData} />}
             />
-          )
+          );
         })}
 
         <Route path="/*" element={<p>NO MATCH</p>} />

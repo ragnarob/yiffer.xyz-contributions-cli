@@ -16,7 +16,7 @@ const routes = [
     //   const comicName = path.split('/').pop();
     //   return getComic(comicName);
     // },
-  }
-]
+  },
+];
 
 export default routes;
