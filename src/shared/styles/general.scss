@@ -1,6 +1,7 @@
 @import './reset.css';
 @import './fonts.css';
 @import './colors.css';
+@import './shadows.scss';
 
 #rootdiv {
   min-width: 100vw;
@@ -58,6 +59,10 @@ p {
 
 a {
   font-weight: 600;
+}
+
+.text-align-center {
+  text-align: center;
 }
 
 .shrikhand {

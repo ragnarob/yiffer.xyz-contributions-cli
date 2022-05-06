@@ -1,20 +1,23 @@
 import React from 'react';
-import './box.scoped.scss'
 
 export default function Box({ margin, padding, elevation, hoverShadow, className, children, ...props }) {
   let elevationClasses = '';
 
   if (elevation === 1) {
-    elevationClasses += ' box-elevation-1 ';
     if (hoverShadow) {
-      elevationClasses += ' box-elevation-1-hover ';
+      elevationClasses += ' simple-shadow-small ';
+    }
+    else {
+      elevationClasses += ' simple-shadow-small-no-hover ';
     }
   }
 
   if (elevation === 2) {
-    elevationClasses += ' box-elevation-2 ';
     if (hoverShadow) {
-      elevationClasses += ' box-elevation-2-hover ';
+      elevationClasses += ' simple-shadow ';
+    }
+    else {
+      elevationClasses += ' simple-shadow-no-hover ';
     }
   }
 

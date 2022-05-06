@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import AuthModal from './components/auth/AuthModal';
 import NavBar from './components/NavBar/NavBar';
 import routes from './routes';
-import "./styles/general.css";
+import "./styles/general.scss";
 
 export default function App({ data, theme }) {
   const storeTheme = useSelector(state => state.theme);

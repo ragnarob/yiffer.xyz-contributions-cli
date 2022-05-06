@@ -1,19 +1,23 @@
 #rootdiv {
   --theme1: #9aebe7;
   --theme2: #adfee0;
+
   --link: #3a7fab;
   --text: #0D0F35;
-  --background: #fff;
+  --theme-text: #49ded7;
 
+  --background: #fff;
   --dark1: #4d4f52;
 }
 
 #rootdiv[data-theme='dark'] {
   --theme1: #9aebe7;
   --theme2: #adfee0;
+
   --link: #3fb9f3;
   --text: #fff;
-  --background: #262c30;
+  --theme-text: #49ded7;
 
+  --background: #262c30;
   --dark1: #4d4f52;
 }

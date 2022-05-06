@@ -15,7 +15,10 @@ delete window.__PRELOADED_STATE__;
 ReactDOM.hydrate(
   <BrowserRouter>
     <Provider store={store}>
-      <App data={window.__INITIAL_DATA__} theme={window.__THEME__} />
+      <App
+        data={window.__INITIAL_DATA__}
+        theme={window.__THEME__}
+      />
     </Provider>
   </BrowserRouter>,
   document.getElementById("app")
