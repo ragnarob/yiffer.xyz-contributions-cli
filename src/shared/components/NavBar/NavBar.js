@@ -3,7 +3,7 @@ import { useCookies } from 'react-cookie';
 import { useDispatch, useSelector } from 'react-redux';
 import Link from '../Link/Link';
 import TextButton from '../TextButton/TextButton';
-import './styles.css';
+import './navBar.scoped.scss';
 
 export default function NavBar({ }) {
   const dispatch = useDispatch();

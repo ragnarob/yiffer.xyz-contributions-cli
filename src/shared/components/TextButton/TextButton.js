@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css'
+import './textButton.scoped.scss'
 
 export default function TextButton({ className = '', children, ...props }) {
   return (

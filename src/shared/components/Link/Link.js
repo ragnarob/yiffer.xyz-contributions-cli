@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './styles.css'
+import './link.scoped.scss'
 
 export default function Link({ to, external = false, newTab = false, children, ...props }) {
   if (external) {

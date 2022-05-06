@@ -32,6 +32,10 @@ h1 {
   font-weight: 300;
   padding-top: 2rem;
   margin-top: 0;
+
+  @media (max-width: 900px) {
+    font-size: 2rem;
+  }
 }
 
 h2 {
@@ -46,12 +50,6 @@ h3 {
 
 h4 {
   font-size: 1.25rem;
-}
-
-@media (max-width: 900px) {
-  h1 {
-    font-size: 2rem;
-  }
 }
 
 p {

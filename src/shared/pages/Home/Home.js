@@ -4,7 +4,7 @@ import { getSomeData } from '../../api';
 import BackToHome from '../../components/BackToHome/BackToHome';
 import Box from '../../components/Box/Box';
 import useSsrData from '../../useSsrData';
-import './styles.scoped.scss';
+import './home.scoped.scss';
 
 export default function Home({ data }) {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css'
+import './box.scoped.scss'
 
 export default function Box({ margin, padding, elevation, hoverShadow, className, children, ...props }) {
   let elevationClasses = '';

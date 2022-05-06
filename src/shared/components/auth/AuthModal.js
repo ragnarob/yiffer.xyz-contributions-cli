@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import './auth.scoped.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import ForgotPassword from './ForgotPassword';
 import Login from './Login';
