@@ -1,18 +1,20 @@
 import React from 'react';
+import Link from '../Link/Link';
+import { MdHome } from 'react-icons/md';
 
-export default function BackToHome({ ...props }) {
+export default function BackToHome({ marginTop = 0, marginBottom = 0, ...props }) {
   return (
-    <a
-      href="https://yiffer.xyz"
+    <Link
+      external
+      to="https://yiffer.xyz"
       style={{
         display: 'block',
-        marginLeft: 'auto',
-        marginRight: 'auto',
+        margin: `${marginTop} auto ${marginBottom} auto`,
         textAlign: 'center',
       }}
       {...props}
     >
-      HOME ICON to front page
-    </a>
+      <MdHome style={{ marginBottom: '-0.2rem' }} /> to front page
+    </Link>
   );
 }

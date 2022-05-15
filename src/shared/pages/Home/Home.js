@@ -10,7 +10,7 @@ export default function Home({ data }) {
   return (
     <>
       <h1 className="text-align-center">Contribute</h1>
-      <BackToHome />
+      <BackToHome marginTop="0.5rem" />
 
       <div className="home-box-container">
         <NavLink to="/upload">
