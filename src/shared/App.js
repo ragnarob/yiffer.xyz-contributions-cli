@@ -6,7 +6,7 @@ import NavBar from './components/NavBar/NavBar';
 import routes from './routes';
 import './styles/general.scss';
 
-export default function App({ data, theme }) {
+export default function App({ data }) {
   const storeTheme = useSelector(state => state.theme);
 
   return (
