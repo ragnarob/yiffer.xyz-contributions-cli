@@ -1,7 +1,18 @@
 @import './reset.css';
-@import './fonts.css';
 @import './colors.css';
 @import './shadows.scss';
+
+// Use @import because this will
+// - NOT block the initial SSR render, but will also (for slow connections)
+// - Be fetched and displayed before the main js bundle hydrates the html
+
+// Self hosting, as far as I was able to figure, blocks the initial render, which
+// makes SSR "pointless" - initial HTML is ~4kb, and then it waits for hundreds of kb of fonts before rendering
+
+// I've left the self-hosted fonts in case anyone wants to play with them anyway. The absolute ideal
+// thing would be to self-host but have the same behavior as this @import (not blocking, but fetched before main bundle)
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,600;1,300;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&text=Yiffer.xyz&display=swap');
 
 #rootdiv {
   min-width: 100vw;

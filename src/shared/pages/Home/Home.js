@@ -1,9 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { getSomeData } from '../../api';
 import BackToHome from '../../components/BackToHome/BackToHome';
 import Box from '../../components/Box/Box';
-import useSsrData from '../../useSsrData';
 import './home.scoped.scss';
 
 export default function Home({ data }) {
@@ -27,17 +25,38 @@ export default function Home({ data }) {
           </Box>
         </NavLink>
 
-        <NavLink to="/suggest-comic">
+        <NavLink to="/scoreboard">
           <Box elevation={2} hoverShadow className="home-box">
-            <h2>Your contributions</h2>
+            <h2>Contributions scoreboard</h2>
             <p>Bla bla text. Bla bla text. Bla bla text. Bla bla text. </p>
           </Box>
         </NavLink>
 
-        <NavLink to="/etc">
+        <NavLink to="/become-a-mod">
           <Box elevation={2} hoverShadow className="home-box">
-            <h2>Stuff</h2>
+            <h2>Become a mod</h2>
             <p>Bla bla text. Bla bla text. Bla bla text. Bla bla text. </p>
+          </Box>
+        </NavLink>
+
+        <NavLink to="/feedback">
+          <Box elevation={2} hoverShadow className="home-box">
+            <h2>Submit feedback</h2>
+            <p>Bla bla text. Bla bla text. Bla bla text. Bla bla text. </p>
+          </Box>
+        </NavLink>
+
+        <NavLink to="/demo-data-fetch/Cats Can Fetch">
+          <Box elevation={2} hoverShadow className="home-box">
+            <h2 style={{ color: 'red' }}>Demo to illustrate data fetching</h2>
+            <p>Comic name Cats Can Fetch</p>
+          </Box>
+        </NavLink>
+
+        <NavLink to="/demo-data-fetch/Comic Relief">
+          <Box elevation={2} hoverShadow className="home-box">
+            <h2 style={{ color: 'red' }}>Demo to illustrate data fetching</h2>
+            <p>Comic name Comic Relief</p>
           </Box>
         </NavLink>
       </div>

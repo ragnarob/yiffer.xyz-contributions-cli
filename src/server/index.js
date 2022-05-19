@@ -52,14 +52,6 @@ app.get('*', async (req, res, next) => {
   store.dispatch({ type: 'theme/setTheme', payload: req.theme });
   store.dispatch({ type: 'auth/setUser', payload: req.userData });
 
-  // const markup = ReactDOM.renderToString(
-  //   <StaticRouter location={req.url}>
-  //     <Provider store={store}>
-  //       <App data={data} theme={req.theme} />
-  //     </Provider>
-  //   </StaticRouter>
-  // );
-
   let didError = false;
   const preloadedState = store.getState();
 
@@ -98,33 +90,7 @@ app.get('*', async (req, res, next) => {
       },
     }
   );
-
-  // res.send(renderFullPage(markup, data, preloadedState, req.theme));
 });
-
-// function renderFullPage(markup, data, preloadedState, theme) {
-//   return `
-//     <!DOCTYPE html>
-//     <html>
-//       <head>
-//         <title>SSR with React Router</title>
-//         <meta name="viewport" content="width=device-width, initial-scale=1">
-//         <script src="/bundle.js" defer></script>
-//         <link href="/main.css" rel="stylesheet" />
-
-//         <script>
-//           window.__INITIAL_DATA__ = ${serialize(data)};
-//           window.__THEME__ = '${theme}';
-//           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')};
-//         </script>
-//       </head>
-
-//       <body>
-//         <div id="app">${markup}</div>
-//       </body>
-//     </html>
-//     `;
-// }
 
 const PORT = process.env.PORT || 3000;
 

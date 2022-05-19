@@ -1,8 +1,5 @@
-/* ABOUT FONTS */
-/* Could not get SSR/webpack to work with the fontsource repos, so a more */
-/* manual approach to self-hosting is done by adding the font files directly */
-/* to the assets/fonts folder. And then also including them in fonts.css. */
-/* Also couldn't get woff2 to work, so just going with woff. */
+/* THIS FILE IS NEVER USED */
+/* See general.scss for an explanation. */
 
 /* shrikhand-latin-ext-400-normal*/
 @font-face {

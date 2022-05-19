@@ -8,13 +8,14 @@ import { hydrateRoot } from 'react-dom/client';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(
-  rootReducer,
-  window.__PRELOADED_STATE__,
-  composeEnhancers(applyMiddleware())
-);
+let initialData = document.body.getAttribute('data-initialdata');
+initialData = initialData ? JSON.parse(initialData) : '';
+let initialState = document.body.getAttribute('data-initialstate');
+initialState = initialState ? JSON.parse(initialState) : {};
 
-delete window.__PRELOADED_STATE__;
+const store = createStore(rootReducer, initialState, composeEnhancers(applyMiddleware()));
+
+document.body.removeAttribute('data-initialstate');
 
 const container = document.getElementById('app');
 
@@ -22,7 +23,7 @@ hydrateRoot(
   container,
   <BrowserRouter>
     <Provider store={store}>
-      <App data={window.__INITIAL_DATA__} />
+      <App data={initialData} isBrowser />
     </Provider>
   </BrowserRouter>
 );

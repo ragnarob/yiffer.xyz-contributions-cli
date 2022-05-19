@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 export default function useSsrData(initialData, dataFetchFunc, dataFetchParams = []) {
   const [data, setData] = useState(() => {
-    return __isBrowser__ ? window.__INITIAL_DATA__ : initialData;
+    return __isBrowser__ ? JSON.parse(document.body.getAttribute('data-initialdata')) : initialData;
   });
 
   const [isLoading, setIsLoading] = useState(data ? false : true);
@@ -24,8 +24,8 @@ export default function useSsrData(initialData, dataFetchFunc, dataFetchParams =
 
   // Clear initial data after it's been used
   useEffect(() => {
-    if (window.__INITIAL_DATA__) {
-      window.__INITIAL_DATA__ = null;
+    if (document.body.getAttribute('data-initialdata')) {
+      document.body.removeAttribute('data-initialdata');
     }
   }, []);
 
