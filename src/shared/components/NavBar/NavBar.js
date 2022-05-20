@@ -20,7 +20,7 @@ export default function NavBar({}) {
     <nav>
       <div className="nav-inner">
         <div className="nav-left">
-          <span className={`small-yiffer-title`}>
+          <span className="small-yiffer-title">
             <Link to="https://yiffer.xyz" external className="desktop">
               Yiffer.xyz
             </Link>

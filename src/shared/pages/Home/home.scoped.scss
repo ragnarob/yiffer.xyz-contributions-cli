@@ -30,3 +30,13 @@
     text-decoration: none;
   }
 }
+
+[data-theme='dark'] {
+  .home-box {
+    background-color: var(--dark1);
+    transition: background-color 100ms;
+    &:hover {
+      background-color: var(--gray5);
+    }
+  }
+}

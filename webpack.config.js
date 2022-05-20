@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const browserConfig = {
   mode: 'development', //TODO: remove for prod
@@ -63,6 +64,9 @@ const serverConfig = {
   },
   plugins: [
     new MiniCssExtractPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: 'src/public', to: 'public' }],
+    }),
     new webpack.DefinePlugin({
       __isBrowser__: 'false',
     }),
